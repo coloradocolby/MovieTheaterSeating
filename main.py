@@ -18,8 +18,15 @@ def main():
         for line in f:
             reservations.append([x for x in line.rstrip().split(' ')]) #    rstrip() removes trailing spaces, split(' ') splits line into list at ' '
 
-        reservations = quickSort(reservations)
+    reservations = quickSort(reservations)
 
-        for x in reservations: ticketsSold += int(x[1])
-        print(ticketsSold)
+    for x in reservations: 
+        ticketsSold += int(x[1])
+        if int(x[1]) > 4:
+            print(x[1])
+    print(ticketsSold)
+
+
+
+
 main()
