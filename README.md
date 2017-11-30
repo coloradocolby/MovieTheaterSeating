@@ -1,5 +1,5 @@
-# Movie Theater Seating
-Written by [Colby Thomas](https://www.coloradocolby.com)
+# movie-theater-seating
+Written by [Colby Thomas](www.coloradocolby.com)
 ## The Problem
 Implement an algorithm for assigning seats within a movie theater to fulfill reservation requests.
 
@@ -21,13 +21,13 @@ If you're familiar with how to run python scripts from the terminal, then you ca
 Navigate to the folder previously downloaded
 
 
-`cd ~/Desktop/MovieTheaterSeating`
+`cd ~/path/to/MovieTheaterSeating`
 
 
 ### Step 2
-**NOTE:** This python scripts takes in 2-3 parameters. The third parameter is *optional*
+**NOTE:** This python scripts takes in 2-3 parameters. The third parameter is *optional**
 
-`python3 main.py [path/to/inputFile] [showtheater OR runtests]`
+`python3 main.py [path/to/inputFile] [showtheater OR runtests]*`
 
 ## Execute Tests
 The following test cases have been written and can be executed using the following command:

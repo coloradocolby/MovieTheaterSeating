@@ -1,3 +1,5 @@
+
+
 import sys, os, time
 from models import Reservation, Seat, Row, Colors
 
@@ -5,32 +7,49 @@ from models import Reservation, Seat, Row, Colors
 
 def assign_seats(reservations, rows):
 
-    for row in reversed(rows):
+    current_reservation
 
-        seat_counter = 0
-        row_capacity = len(row.seats)
+    seat_counter = 0
+    row_capacity = len(row.seats)
 
-        for res in reservations:
+    for res in reservations:
 
-            if res.quantity <= row_capacity and not res.fulfilled:
+        #
+        #     seats_filled = seat_counter
+        #
+        #     for x in row_capacity:
+        #         # if row.seats[seat_counter].availability:
+        #             current_seat = row.seats[seat_counter]
+        #
+        #             current_seat.reservation = res
+        #             current_seat.availability = False
+        #
+        #             res.seats.append(current_seat)
+        #             seat_counter += 1
+        #             row_capacity -= 1
+        #
+        #     excess_reservations = seat_counter - seats_filled
 
-                if res.quantity > 0:
+        if not res.fulfilled:
 
-                    for x in range(res.quantity):
-                        # if row.seats[seat_counter].availability:
-                            current_seat = row.seats[seat_counter]
 
-                            current_seat.reservation = res
-                            current_seat.availability = False
 
-                            res.seats.append(current_seat)
-                            seat_counter += 1
-                            row_capacity -= 1
+            for x in range(res.quantity):
+                # if row.seats[seat_counter].availability:
+                    current_seat = row.seats[seat_counter]
 
-                    res.fulfilled = True
+                    current_seat.reservation = res
+                    current_seat.availability = False
 
-                else:
-                    print('Received negative quantity')
+                    res.seats.append(current_seat)
+                    seat_counter += 1
+                    row_capacity -= 1
+
+            res.fulfilled = True
+
+        else if res.quantity > 20 :
+
+
 # Disable Printing
 def block_print():
     sys.stdout = open(os.devnull, 'w')
@@ -102,7 +121,7 @@ def runtests(reservations, rows, disable_printing):
                 # rstrip() removes trailing spaces, split(' ') splits line into list at ' '
                 # reservations.append([x for x in line.rstrip().split(' ')])
                 reservation = line.rstrip().split(' ')
-                if reservation[0].startswith('R') and int(reservation[1]) < 20:
+                if reservation[0].startswith('R'):
                     reservations.append(Reservation(reservation[0], int(reservation[1])))
                 else:
                     raise ValueError
