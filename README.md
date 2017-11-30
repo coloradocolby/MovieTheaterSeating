@@ -1,5 +1,5 @@
 # movie-theater-seating
-Written by [Colby Thomas](www.coloradocolby.com)
+Written by [Colby Thomas](http://www.coloradocolby.com)
 ## The Problem
 Implement an algorithm for assigning seats within a movie theater to fulfill reservation requests.
 
